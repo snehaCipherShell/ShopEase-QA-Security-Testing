@@ -1,0 +1,13 @@
+# Read-only SQL integrity check on a COPY of the tester's local instance/shopease.db
+# Run (UTC): 2026-10-10 (reviewer sandbox, Python sqlite3, opened with mode=ro). Counts only; no personal data recorded.
+# The database itself is git-ignored and must never be published (it contains shipping details typed during manual testing).
+users=4 orders=4 order_items=6 sessions=1
+A5  duplicate usernames=0 duplicate emails=0
+A11 orders whose stored totals differ from lines + shipping = 0
+A13 order lines with line_total <> unit_price x quantity = 0
+A14 orphan order lines = 0
+A18 products with negative stock = 0
+PRAGMA foreign_key_check -> no violations
+order statuses: #1 CANCELLED, #2 PLACED, #3 CANCELLED (seed), #4 CANCELLED
+registered user (id 4) password_hash scheme prefix: scrypt (the production default), not plaintext
+observation OBS-03: stock of product 2 is 31 (seed value 30): seeded order #1 was cancelled by the tester, which restocked a unit the seed never deducted

@@ -1,0 +1,15 @@
+# ShopEase optional environment variables (local use only).
+# ShopEase needs NO secrets: sessions are random server-side tokens, not signed cookies.
+# Export these in your shell if you want to override a default; never commit real values.
+
+# Path of the SQLite database (default: instance/shopease.db)
+# export SHOPEASE_DATABASE=/tmp/shopease-demo.db
+
+# Port for run.py (default 5000). The host is always 127.0.0.1; run.py refuses anything else.
+# export SHOPEASE_PORT=5000
+
+# Set to 1 ONLY if you front the app with HTTPS; adds the Secure attribute to the session cookie.
+# export SHOPEASE_COOKIE_SECURE=0
+
+# Password hashing method for new users (default scrypt). Tests use a faster pbkdf2 setting.
+# export SHOPEASE_HASH_METHOD=scrypt

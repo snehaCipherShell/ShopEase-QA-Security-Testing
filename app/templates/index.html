@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShopEase (local QA training app)</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>ShopEase</h1>
+    <span class="badge">Local QA &amp; security training app &mdash; fictional data only</span>
+    <div id="userbar"><span id="whoami">Not logged in</span> <button id="logout-btn" hidden>Logout</button></div>
+  </header>
+  <p id="message" role="alert"></p>
+  <main>
+    <section id="auth-section">
+      <h2>Account</h2>
+      <form id="register-form" autocomplete="off">
+        <h3>Register</h3>
+        <input id="reg-username" placeholder="username" required>
+        <input id="reg-email" placeholder="email" required>
+        <input id="reg-password" type="password" placeholder="password" required>
+        <button type="submit" id="register-btn">Register</button>
+      </form>
+      <form id="login-form" autocomplete="off">
+        <h3>Login</h3>
+        <input id="login-username" placeholder="username" required>
+        <input id="login-password" type="password" placeholder="password" required>
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+    </section>
+    <section id="products-section">
+      <h2>Products</h2>
+      <form id="search-form"><input id="search-input" placeholder="Search products"><button type="submit" id="search-btn">Search</button></form>
+      <ul id="product-list"></ul>
+    </section>
+    <section id="cart-section">
+      <h2>Cart</h2>
+      <table id="cart-table"><thead><tr><th>Item</th><th>Unit</th><th>Qty</th><th>Line total</th><th></th></tr></thead><tbody></tbody></table>
+      <p>Subtotal: <strong id="cart-subtotal">0.00</strong></p>
+      <form id="checkout-form">
+        <input id="ship-name" placeholder="Shipping name" required>
+        <input id="ship-address" placeholder="Shipping address" required>
+        <button type="submit" id="checkout-btn">Place order (simulated payment)</button>
+      </form>
+    </section>
+    <section id="orders-section">
+      <h2>Order history</h2>
+      <ul id="order-list"></ul>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

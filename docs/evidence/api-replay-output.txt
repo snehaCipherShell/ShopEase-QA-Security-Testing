@@ -1,0 +1,50 @@
+# API-level replay output
+# Run (UTC): 2026-10-10T13:46:40Z (recorded at run time) | Python 3.12.3 | Flask 3.1.3 | Werkzeug 3.1.7 | requests 2.33.1
+# Command: python scripts/replay_manual_cases.py   (temporary database; this is NOT pytest, NOT Postman and NOT a browser run)
+
+ID             RESULT TITLE
+TC-REG-001     PASS   Register with valid details
+TC-REG-002     PASS   Duplicate username (case variation)
+TC-REG-003     PASS   7-char password rejected
+TC-REG-004     PASS   8-char password accepted
+TC-LOG-001     PASS   Login valid
+TC-LOG-002     PASS   Login wrong password
+TC-LOG-003     PASS   Logout closes session
+TC-SRC-001     PASS   Search 'mouse'
+TC-SRC-002     PASS   Search no match
+TC-SRC-003     PASS   Search case-insensitive 'LAPTOP'
+TC-CRT-001     PASS   Add to cart
+TC-CRT-002     PASS   Update quantity
+TC-CRT-003     PASS   Remove item
+TC-CRT-004     PASS   Quantity 0 rejected
+TC-CRT-005     PASS   Quantity 10 accepted
+TC-CRT-006     PASS   Quantity 11 rejected
+TC-CRT-007     PASS   Out-of-stock product
+TC-CAL-001     PASS   Subtotal two products
+TC-CAL-002     PASS   Free-shipping boundary 45.00 vs 50.00
+TC-CHK-001     PASS   Successful checkout
+TC-CHK-002     PASS   Checkout empty cart
+TC-CHK-003     PASS   Checkout missing address
+TC-ORD-001     PASS   Order history own orders only
+TC-ORD-002     PASS   Cancel and restock
+SEC-AUTH-001   PASS   Protected routes logged out
+SEC-AUTH-002   PASS   Login message / enumeration
+SEC-AUTH-003   PASS   Password stored hashed
+SEC-AUTH-004   PASS   SQL-injection-style login
+SEC-SESS-001   PASS   Session invalid after logout (cookie replay)
+SEC-SESS-002   PASS   Invalid / tampered cookies
+SEC-SESS-003   PASS   Expired session
+SEC-SESS-004   PASS   Cookie attributes
+SEC-SESS-005   PASS   New token each login
+SEC-AUTHZ-001  PASS   Alice reads Bob's order (IDOR)
+SEC-AUTHZ-002  PASS   Alice cancels Bob's order
+SEC-AUTHZ-003  PASS   Customer vs admin endpoint
+SEC-AUTHZ-004  PASS   Role / user_id manipulation
+SEC-INPUT-001  PASS   Malformed requests / error handling
+SEC-INPUT-002  PASS   Injection / script-like search input
+SEC-PRICE-001  PASS   Price, total, quantity tampering
+      ok  (d) editing the HTML input in DevTools = same server request as (c): server validation shown; browser step itself NOT run
+SEC-HDR-001    PASS   Security headers and banner
+BUG-002-REG    PASS   Out-of-range IDs (BUG-002 regression)
+
+42 PASS, 0 FAIL out of 42 (API-level replay; not pytest, not Postman)

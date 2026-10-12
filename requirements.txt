@@ -1,0 +1,5 @@
+# Recorded pytest run (screenshots/pytest-output.txt): Python 3.14.6, pytest 8.4.2. Install inside a virtual environment.
+Flask>=3.0,<4.0
+Werkzeug>=3.0,<4.0
+requests>=2.31,<3.0
+pytest>=8.0,<9.0

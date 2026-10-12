@@ -1,0 +1,26 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Local databases (created by `python -m app.init_db`)
+instance/*.db
+instance/*.sqlite
+*.db
+*.sqlite
+# Local environment / secrets
+.env
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+
+# Added during portfolio review: files that can contain cookies, tokens or personal data
+jar.txt
+cookies.txt
+*.har
+*.pcap
+# Keep unsanitized originals of flagged screenshots out of the public repo (see docs/evidence-index.md)
+screenshots/private/
