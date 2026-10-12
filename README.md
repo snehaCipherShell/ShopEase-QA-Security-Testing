@@ -48,7 +48,7 @@ ShopEase-QA-Security-Testing/
 ## Installation and local setup (Linux / Kali)
 ```bash
 sudo apt update && sudo apt install -y python3 python3-venv python3-pip sqlite3 git
-git clone https://github.com/<your-username>/ShopEase-QA-Security-Testing.git
+git clone https://github.com/SnehaCipherShell/ShopEase-QA-Security-Testing.git
 cd ShopEase-QA-Security-Testing
 python3 -m venv .venv
 source .venv/bin/activate
@@ -157,4 +157,4 @@ Test only this local instance, or systems you own or have written permission to 
 | `Database not found` | `python -m app.init_db --reset` |
 | `Address already in use` | `SHOPEASE_PORT=5001 python run.py` (update `baseUrl` in Postman) |
 
-License: MIT (`LICENSE`; replace `<YOUR NAME>`).
+License: MIT (`LICENSE`).

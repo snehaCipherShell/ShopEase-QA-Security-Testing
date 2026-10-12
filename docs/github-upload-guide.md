@@ -9,13 +9,6 @@ git init                             # creates .git inside the project (safe: it
 git rev-parse --show-toplevel        # now must print .../ShopEase-QA-Security-Testing
 ```
 
-## 1. Fill in your own details (replace the values in quotes)
-```bash
-sed -i 's/<YOUR NAME>/Your Full Name/' LICENSE
-sed -i 's#<your-username>#your-github-username#' README.md docs/github-upload-guide.md
-grep -rn "<YOUR NAME>\|<your-username>" README.md LICENSE docs | head      # should print nothing
-```
-
 ## 2. Safety checks before the first commit
 ```bash
 git status --short --ignored | grep '^!!'     # expect: .venv/, instance/shopease.db, screenshots/private/ (and caches)
@@ -41,7 +34,7 @@ github.com > **New repository** > name `ShopEase-QA-Security-Testing` > Public >
 
 ## 5. Push (SSH or token)
 ```bash
-git remote add origin https://github.com/<your-username>/ShopEase-QA-Security-Testing.git
+git remote add origin https://github.com/SnehaCipherShell/ShopEase-QA-Security-Testing.git
 git push -u origin main
 ```
 GitHub does not accept account passwords: use a **fine-grained personal access token** as the password, or SSH (`ssh-keygen -t ed25519`, add the public key in GitHub settings, then use `git@github.com:<you>/ShopEase-QA-Security-Testing.git`). **Never commit a token.**
